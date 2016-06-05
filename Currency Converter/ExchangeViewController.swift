@@ -23,7 +23,7 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
         
         currencySelectorView.delegate = self
         
-        
+        requestLatestCurrencyData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +43,7 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
             }
             
             if let rates = rates {
-                self.currencies = rates
+                self.currencies = rates // TODO: Save it to the disk and re-read it on startup
             }
         }
     }
