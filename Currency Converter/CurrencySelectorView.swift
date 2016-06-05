@@ -33,8 +33,6 @@ class CurrencySelectorView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        guard let delegate = delegate else { return }
-        
         // Remove existing Currency Labels
         if let currencyLabels = self.currencyLabels {
             for currencyLabel in currencyLabels {
@@ -42,11 +40,17 @@ class CurrencySelectorView: UIView {
             }
         }
         
-        // Map new items into Currency Labels
+        guard let delegate = delegate else { return }
         let numberOfItems = delegate.numberOfItems()
         let itemIndexes = 0..<numberOfItems
+        
+        // Calculate the x-origin point, so that new labels are centered horizontally
+        let labelsWidth = (CGFloat(numberOfItems) * CurrencySelectorView.kCurrencyLabelWidth) + (CGFloat(numberOfItems) * CurrencySelectorView.kCurrencyLabelMargin)
+        let xOrigin = center.x - labelsWidth/2
+        
+        // Map new items into Currency Labels
         self.currencyLabels = itemIndexes.map {
-            return currencyLabelForIndex($0, text: delegate.textForItemAtIndex($0))
+            return currencyLabelForIndex($0, text: delegate.textForItemAtIndex($0), xOrigin: xOrigin)
         }
         
         // Add new Currency Labels as subviews
@@ -57,8 +61,8 @@ class CurrencySelectorView: UIView {
         }
     }
     
-    private func currencyLabelForIndex(index: Int, text: String) -> CurrencyLabel {
-        let xOffset = (CGFloat(index - CurrencySelectorView.kNumberOfItemsOffscreen) * CurrencySelectorView.kCurrencyLabelWidth) + (CGFloat(index - CurrencySelectorView.kNumberOfItemsOffscreen) * CurrencySelectorView.kCurrencyLabelMargin)
+    private func currencyLabelForIndex(index: Int, text: String, xOrigin: CGFloat) -> CurrencyLabel {
+        let xOffset = xOrigin + ((CGFloat(index) * CurrencySelectorView.kCurrencyLabelWidth) + (CGFloat(index) * CurrencySelectorView.kCurrencyLabelMargin))
         let frame = CGRectMake(xOffset, 0, CurrencySelectorView.kCurrencyLabelWidth, self.bounds.height)
         let label = CurrencyLabel(frame: frame)
         label.text = text
