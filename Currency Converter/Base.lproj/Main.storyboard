@@ -14,23 +14,37 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MQ2-rr-hDm">
-                                <rect key="frame" x="205" y="50" width="191" height="20"/>
+                                <rect key="frame" x="112" y="50" width="191" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="191" id="0gf-Ov-ImP"/>
                                     <constraint firstAttribute="height" constant="20" id="wDI-22-prD"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-Yp-2hD" customClass="HorizontalLabelSelectorView" customModule="Currency_Converter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="293" width="414" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="GGP-Z3-wpu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20278444886207581" green="0.81154543161392212" blue="0.49529045820236206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MQ2-rr-hDm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11w-7A-FCY"/>
                             <constraint firstItem="MQ2-rr-hDm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="OuP-Tl-T5U"/>
+                            <constraint firstItem="jqi-Yp-2hD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rjd-tm-GZX"/>
+                            <constraint firstAttribute="trailing" secondItem="jqi-Yp-2hD" secondAttribute="trailing" id="RrU-ew-L5A"/>
+                            <constraint firstItem="jqi-Yp-2hD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hPP-B1-m2E"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="currencySelectorView" destination="jqi-Yp-2hD" id="NFl-Kh-IJs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
