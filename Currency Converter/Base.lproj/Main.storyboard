@@ -27,6 +27,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-Yp-2hD" customClass="CurrencySelectorView" customModule="Currency_Converter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="318" width="414" height="100"/>
                                 <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-eu-LeU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    </scrollView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Indicator_1" translatesAutoresizingMaskIntoConstraints="NO" id="ja0-nK-XYA">
                                         <rect key="frame" x="197" y="-5" width="20" height="14"/>
                                         <constraints>
@@ -44,12 +47,19 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.20684212446212769" green="0.75636470317840576" blue="0.46858000755310059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="X9k-eu-LeU" firstAttribute="top" secondItem="jqi-Yp-2hD" secondAttribute="top" id="0AI-DP-1MZ"/>
+                                    <constraint firstItem="X9k-eu-LeU" firstAttribute="leading" secondItem="jqi-Yp-2hD" secondAttribute="leading" id="BDt-sR-qXX"/>
                                     <constraint firstAttribute="height" constant="100" id="GGP-Z3-wpu"/>
                                     <constraint firstItem="ja0-nK-XYA" firstAttribute="top" secondItem="jqi-Yp-2hD" secondAttribute="top" constant="-5" id="ILm-jM-XY7"/>
                                     <constraint firstItem="2dF-0K-dmp" firstAttribute="centerX" secondItem="jqi-Yp-2hD" secondAttribute="centerX" id="Mwk-xI-0DG"/>
+                                    <constraint firstAttribute="bottom" secondItem="X9k-eu-LeU" secondAttribute="bottom" id="UxW-6R-CEM"/>
                                     <constraint firstItem="ja0-nK-XYA" firstAttribute="centerX" secondItem="jqi-Yp-2hD" secondAttribute="centerX" id="Wio-cF-dBu"/>
                                     <constraint firstAttribute="bottom" secondItem="2dF-0K-dmp" secondAttribute="bottom" constant="-5" id="bUr-1R-Qfh"/>
+                                    <constraint firstAttribute="trailing" secondItem="X9k-eu-LeU" secondAttribute="trailing" id="em4-v6-xcu"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="scrollView" destination="X9k-eu-LeU" id="Jfd-pC-YoS"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20278444886207581" green="0.81154543161392212" blue="0.49529045820236206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
