@@ -12,10 +12,16 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     
     @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
     @IBOutlet weak var baseCurrencyLabel: UILabel!
+    @IBOutlet weak var outputCurrencyLabel: UILabel!
     @IBOutlet weak private var baseAmountTextField: DynamicWidthTextField!
     
     static private let baseCurrencyName = "AUD"
     static private let conversionCurrencyNames = [ "CAD", "EUR", "GBP", "JPY", "USD" ]
+    static private let kMaximumDigits = 14
+    
+    let exchangeCalculator = CurrencyExchangeCalculator(baseCurrency: Currency(name: baseCurrencyName))
+    
+    private var selectedCurrencyIndex: Int = 2
     
     private var currencies: [Currency]? {
         didSet {
@@ -30,6 +36,11 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
         
         setupSubViews()
         requestLatestCurrencyData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        calculateExchangeAmount()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +60,8 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CurrencyExchangeViewController.didTapOutsideTextField))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
+        
+        currencySelectorView.initialSelectionIndex = selectedCurrencyIndex
     }
     
     private func requestLatestCurrencyData() {
@@ -77,7 +90,8 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     }
     
     func selectorDidSelectItemAtIndex(index: Int) {
-        print("Index Selected: \(index)")
+        selectedCurrencyIndex = index
+        calculateExchangeAmount()
     }
     
     // MARK: UITextFieldDelegate
@@ -85,6 +99,11 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if let textFieldText = textField.text {
             let proposedText = (textFieldText as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            
+            // Number of digits is greather than maximum
+            if (proposedText.characters.count > CurrencyExchangeViewController.kMaximumDigits) {
+                return false
+            }
             
             if ((proposedText as NSString).rangeOfString(".").location != NSNotFound) {
                 // Restrict number of decimal places (".") characters to 1
@@ -104,6 +123,7 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     }
     
     internal func textFieldTextDidChange(textField: UITextField) {
+        calculateExchangeAmount()
         UIView.animateWithDuration(0.1) {
             textField.invalidateIntrinsicContentSize()
         }
@@ -123,6 +143,20 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     
     internal func didTapOutsideTextField() {
         baseAmountTextField.resignFirstResponder()
+    }
+    
+    // MARK: Calculation
+    
+    private func calculateExchangeAmount() {
+        if let textFieldText = baseAmountTextField.text {
+            guard let currencies = currencies else { return }
+            let selectedCurrency = currencies[selectedCurrencyIndex]
+            let outputCurrencyAmount = exchangeCalculator.calculateCurrencyRate((textFieldText as NSString).doubleValue, outputCurrency: selectedCurrency)
+            outputCurrencyLabel.text = "\(outputCurrencyAmount)"
+        }
+        else {
+            outputCurrencyLabel.text = "0.00"
+        }
     }
 
 }

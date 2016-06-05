@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class CurrencyExchangeCalculator {
+    
+    let baseCurrency: Currency
+    
+    init(baseCurrency: Currency) {
+        self.baseCurrency = baseCurrency
+    }
+    
+    func calculateCurrencyRate(baseAmount: Double, outputCurrency: Currency) -> Double {
+        let exchangeRate = outputCurrency.exchangeRate
+        return baseAmount * exchangeRate
+    }
+    
+}

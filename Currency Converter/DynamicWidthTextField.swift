@@ -28,7 +28,7 @@ class DynamicWidthTextField: UITextField {
         borderLayer.strokeColor = color.CGColor
         borderLayer.fillColor = nil
         borderLayer.lineWidth = 6
-        borderLayer.lineDashPattern = [6, 3]
+        borderLayer.lineDashPattern = [4, 2]
         borderLayer.path = UIBezierPath(rect: CGRectMake(0, view.bounds.height
             , view.bounds.width, 3)).CGPath
         view.layer.addSublayer(borderLayer)

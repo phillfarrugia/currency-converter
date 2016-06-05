@@ -11,11 +11,11 @@ import Foundation
 struct Currency {
     
     let name: String
-    let exchangeRate: Double?
+    let exchangeRate: Double
     
     // MARK: Initializers
     
-    init(name: String, exchangeRate: Double? = nil) {
+    init(name: String, exchangeRate: Double = 0) {
         self.name = name
         self.exchangeRate = exchangeRate
     }
