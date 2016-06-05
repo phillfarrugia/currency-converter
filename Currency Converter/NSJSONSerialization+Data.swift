@@ -11,8 +11,7 @@ import Foundation
 extension NSJSONSerialization {
     
     /**
-      Serializes NSData into a Dictionary or
-     returns an NSError.
+      Serializes NSData into a Dictionary or returns an NSError.
      - parameter data:	JSON data to parse
      - parameter options: JSON reading options
      - throws: throws if serialisation fails

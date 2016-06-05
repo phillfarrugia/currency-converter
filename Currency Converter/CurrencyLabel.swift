@@ -17,11 +17,6 @@ import UIKit
     
     // MARK: Initializers
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configureStyle()
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureStyle()
@@ -29,10 +24,6 @@ import UIKit
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        configureStyle()
-    }
-    
-    override func prepareForInterfaceBuilder() {
         configureStyle()
     }
     

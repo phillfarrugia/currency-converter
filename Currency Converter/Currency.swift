@@ -22,18 +22,6 @@ struct Currency {
     
     // MARK: Helpers
     
-    static func currenciesWithNames(names: [String]) -> [Currency] {
-        return names.map {
-            return Currency(name: $0)
-        }
-    }
-    
-    static func namesWithCurrencies(currencies: [Currency]) -> [String] {
-        return currencies.map {
-            return $0.name
-        }
-    }
-    
     /**
      Converts an array of JSON dictionaries into Currency objects. If a conversion
      fails the object if filtered out of the array.
