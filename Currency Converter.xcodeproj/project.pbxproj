@@ -16,6 +16,7 @@
 		F723FAD01D03C73E00336E9C /* CurrencySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */; };
 		F723FAD21D03E9ED00336E9C /* CurrencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */; };
 		F723FAD41D04323700336E9C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD31D04323700336E9C /* Currency.swift */; };
+		F723FAD61D0432C800336E9C /* NetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD51D0432C800336E9C /* NetworkRequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectorView.swift; sourceTree = "<group>"; };
 		F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLabel.swift; sourceTree = "<group>"; };
 		F723FAD31D04323700336E9C /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		F723FAD51D0432C800336E9C /* NetworkRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				F723FAD31D04323700336E9C /* Currency.swift */,
 				F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */,
 				F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */,
+				F723FAD51D0432C800336E9C /* NetworkRequestManager.swift */,
 				F723FAB31D03C22000336E9C /* Main.storyboard */,
 				F723FAB61D03C22000336E9C /* Assets.xcassets */,
 				F723FAB81D03C22000336E9C /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 				F723FAD41D04323700336E9C /* Currency.swift in Sources */,
 				F723FAD21D03E9ED00336E9C /* CurrencyLabel.swift in Sources */,
 				F723FAD01D03C73E00336E9C /* CurrencySelectorView.swift in Sources */,
+				F723FAD61D0432C800336E9C /* NetworkRequestManager.swift in Sources */,
 				F723FAB01D03C22000336E9C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

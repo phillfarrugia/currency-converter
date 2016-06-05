@@ -18,6 +18,12 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
         super.viewDidLoad()
         
         currencySelectorView.delegate = self
+        
+        let baseCurrency = Currency(name: "AUD")
+        let conversionCurrencies = Currency.currenciesWithNames([ "CAD", "EUR", "GBP", "JPY", "USD" ])
+        NetworkRequestManager.exchangeRatesRequest(baseCurrency, conversionCurrencies: conversionCurrencies) {
+            //
+        }
     }
 
     override func didReceiveMemoryWarning() {

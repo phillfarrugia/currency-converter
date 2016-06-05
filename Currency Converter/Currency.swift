@@ -11,11 +11,23 @@ import Foundation
 struct Currency {
     
     let name: String
-    let exchangeRate: Double
+    let exchangeRate: Double?
     
-    init(name: String, exchangeRate: Double) {
+    init(name: String, exchangeRate: Double? = nil) {
         self.name = name
         self.exchangeRate = exchangeRate
+    }
+    
+    static func currenciesWithNames(names: [String]) -> [Currency] {
+        return names.map {
+            return Currency(name: $0)
+        }
+    }
+    
+    static func namesWithCurrencies(currencies: [Currency]) -> [String] {
+        return currencies.map {
+            return $0.name
+        }
     }
     
 }
