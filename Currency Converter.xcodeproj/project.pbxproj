@@ -18,6 +18,7 @@
 		F723FAD41D04323700336E9C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD31D04323700336E9C /* Currency.swift */; };
 		F723FAD61D0432C800336E9C /* NetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD51D0432C800336E9C /* NetworkRequestManager.swift */; };
 		F723FAD81D043DFC00336E9C /* NSJSONSerialization+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */; };
+		F723FADE1D045C1500336E9C /* DynamicWidthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F723FAD31D04323700336E9C /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		F723FAD51D0432C800336E9C /* NetworkRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestManager.swift; sourceTree = "<group>"; };
 		F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSJSONSerialization+Data.swift"; sourceTree = "<group>"; };
+		F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicWidthTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				F723FAAF1D03C22000336E9C /* AppDelegate.swift */,
 				F723FAB11D03C22000336E9C /* ExchangeViewController.swift */,
+				F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */,
 				F723FAD31D04323700336E9C /* Currency.swift */,
 				F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */,
 				F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */,
@@ -219,6 +222,7 @@
 				F723FAD01D03C73E00336E9C /* CurrencySelectorView.swift in Sources */,
 				F723FAD61D0432C800336E9C /* NetworkRequestManager.swift in Sources */,
 				F723FAB01D03C22000336E9C /* AppDelegate.swift in Sources */,
+				F723FADE1D045C1500336E9C /* DynamicWidthTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
