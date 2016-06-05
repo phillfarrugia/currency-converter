@@ -14,7 +14,7 @@ protocol CurrencySelectorViewDelegate {
     func selectorDidSelectItemAtIndex(index: Int)
 }
 
-class CurrencySelectorView: UIView {
+class CurrencySelectorView: UIView, UIScrollViewDelegate {
     
     static private let kNumberOfItemsOffscreen: Int = 1
     static private let kCurrencyLabelWidth: CGFloat = 120
@@ -27,16 +27,16 @@ class CurrencySelectorView: UIView {
     private var currencyLabels: [CurrencyLabel]?
     private var selectedLabel: CurrencyLabel?
     
-    var initialSelectionIndex: Int = 0 {
-        didSet {
-            scrollToSelectedIndex(initialSelectionIndex)
-        }
-    }
+    var initialSelectionIndex: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         clipsToBounds = false
+        
+        if let scrollView = scrollView {
+            scrollView.delegate = self
+        }
     }
     
     override func layoutSubviews() {
@@ -57,7 +57,7 @@ class CurrencySelectorView: UIView {
         // Calculate Scroll View Content Width & Content Inset
         let labelsWidth = (CGFloat(numberOfItems) * CurrencySelectorView.kCurrencyLabelWidth) + (CGFloat(numberOfItems) * CurrencySelectorView.kCurrencyLabelMargin)
         scrollView.contentSize.width = labelsWidth
-        scrollView.contentInset = UIEdgeInsetsMake(0, CurrencySelectorView.kCurrencyLabelWidth, 0, CurrencySelectorView.kCurrencyLabelWidth)
+        scrollView.contentInset = UIEdgeInsetsMake(0, self.center.x - CurrencySelectorView.kCurrencyLabelWidth/2, 0, self.center.x - CurrencySelectorView.kCurrencyLabelWidth/2)
         
         // Map new items into Currency Labels
         self.currencyLabels = itemIndexes.map {
@@ -71,7 +71,12 @@ class CurrencySelectorView: UIView {
             }
         }
         
-        scrollToSelectedIndex(0)
+        // Check if Intitial Index is inside array bounds
+        if (initialSelectionIndex >= 0 && initialSelectionIndex < numberOfItems) {
+            scrollToItemAtIndex(initialSelectionIndex, animated: false)
+        } else {
+            scrollToItemAtIndex(0, animated: false)
+        }
     }
     
     private func currencyLabelForIndex(index: Int, text: String) -> CurrencyLabel {
@@ -82,7 +87,7 @@ class CurrencySelectorView: UIView {
         return label
     }
     
-    private func scrollToSelectedIndex(selectedIndex: Int) {
+    private func scrollToItemAtIndex(index: Int, animated: Bool) {
         guard let scrollView = scrollView else { return }
         guard let currencyLabels = currencyLabels else { return }
         
@@ -92,13 +97,28 @@ class CurrencySelectorView: UIView {
         }
         
         // New Selection Label at Index
-        let newSelection = currencyLabels[selectedIndex]
+        let newSelection = currencyLabels[index]
         newSelection.setSelected(true)
         self.selectedLabel = newSelection
         
         // Scroll to Currency Label center x
         let xOffset = newSelection.center.x - self.center.x
-        scrollView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: true)
+        let scrollViewContentOffset = CGPoint(x: xOffset, y: 0)
+        scrollView.setContentOffset(scrollViewContentOffset, animated: animated)
     }
-
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        guard let currencyLabels = currencyLabels else { return }
+        guard let selectedLabel = selectedLabel else { return }
+        
+        let labelWidth = CurrencySelectorView.kCurrencyLabelWidth + CurrencySelectorView.kCurrencyLabelMargin
+        let targetItemIndex = Int(floor((scrollView.contentOffset.x + self.center.x) / labelWidth))
+        if (targetItemIndex >= 0 && targetItemIndex < currencyLabels.count) {
+            let targetItem = currencyLabels[targetItemIndex]
+            selectedLabel.setSelected(false)
+            targetItem.setSelected(true)
+            self.selectedLabel = targetItem
+        }
+    }
+    
 }
