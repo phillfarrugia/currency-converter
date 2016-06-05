@@ -15,24 +15,24 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MQ2-rr-hDm">
-                                <rect key="frame" x="273" y="50" width="191" height="20"/>
+                                <rect key="frame" x="205" y="50" width="191" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="191" id="0gf-Ov-ImP"/>
                                     <constraint firstAttribute="height" constant="20" id="wDI-22-prD"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwI-rs-Wso">
-                                <rect key="frame" x="0.0" y="70" width="736" height="344"/>
+                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-ib-fx2" userLabel="Text Field Centered Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="736" height="122"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfj-Pv-7ba">
-                                                <rect key="frame" x="308" y="15" width="120" height="92"/>
+                                                <rect key="frame" x="240" y="62" width="120" height="92"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JV-Ev-eVt">
                                                         <rect key="frame" x="18" y="0.0" width="84" height="39"/>
@@ -77,24 +77,24 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3o-Bz-FjY" customClass="CurrencySelectorView" customModule="Currency_Converter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="122" width="736" height="100"/>
+                                        <rect key="frame" x="0.0" y="215" width="600" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4l4-KV-w1c">
-                                                <rect key="frame" x="0.0" y="0.0" width="736" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUe-4t-ftD">
-                                                <rect key="frame" x="0.0" y="0.0" width="736" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                             </scrollView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Indicator_1" translatesAutoresizingMaskIntoConstraints="NO" id="KFY-Al-9X6">
-                                                <rect key="frame" x="358" y="-5" width="20" height="14"/>
+                                                <rect key="frame" x="290" y="-5" width="20" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="WhX-ys-GJm"/>
                                                     <constraint firstAttribute="height" constant="14" id="WlV-Jk-Fs3"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Indicator_2" translatesAutoresizingMaskIntoConstraints="NO" id="Nf4-3x-Nin">
-                                                <rect key="frame" x="358" y="91" width="20" height="14"/>
+                                                <rect key="frame" x="290" y="91" width="20" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="P8C-mx-CcD"/>
                                                     <constraint firstAttribute="height" constant="14" id="oTU-e7-tig"/>
@@ -123,10 +123,10 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucP-5F-A6p" userLabel="Output Label Centered Container View">
-                                        <rect key="frame" x="0.0" y="222" width="736" height="122"/>
+                                        <rect key="frame" x="0.0" y="315" width="600" height="215"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR5-El-iAM">
-                                                <rect key="frame" x="314" y="35" width="108" height="53"/>
+                                                <rect key="frame" x="246" y="81" width="108" height="53"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -165,8 +165,6 @@
                             <constraint firstAttribute="trailing" secondItem="cwI-rs-Wso" secondAttribute="trailing" id="jz3-nT-0ZD"/>
                         </constraints>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="baseAmountTextField" destination="6FS-uw-9CC" id="5dq-yL-KGG"/>
                         <outlet property="baseCurrencyLabel" destination="9JV-Ev-eVt" id="Muc-6P-c4B"/>

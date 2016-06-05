@@ -98,16 +98,12 @@
 				F723FAAF1D03C22000336E9C /* AppDelegate.swift */,
 				F723FAB11D03C22000336E9C /* CurrencyExchangeViewController.swift */,
 				F723FADF1D045F5800336E9C /* CurrencyExchangeCalculator.swift */,
-				F723FAD31D04323700336E9C /* Currency.swift */,
-				F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */,
-				F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */,
-				F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */,
 				F723FAD51D0432C800336E9C /* NetworkRequestManager.swift */,
-				F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */,
-				F723FAE41D0467A400336E9C /* UIView+InnerShadow.h */,
-				F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */,
-				F723FAB31D03C22000336E9C /* Main.storyboard */,
+				F723FAEA1D046AF900336E9C /* Models */,
+				F723FAE91D046AF200336E9C /* Views */,
+				F723FAE81D046AE000336E9C /* Extensions */,
 				F723FAB61D03C22000336E9C /* Assets.xcassets */,
+				F723FAB31D03C22000336E9C /* Main.storyboard */,
 				F723FAB81D03C22000336E9C /* LaunchScreen.storyboard */,
 				F723FABB1D03C22000336E9C /* Info.plist */,
 				F723FAE31D0467A300336E9C /* Currency Converter-Bridging-Header.h */,
@@ -122,6 +118,34 @@
 				F723FAC61D03C22000336E9C /* Info.plist */,
 			);
 			path = "Currency ConverterTests";
+			sourceTree = "<group>";
+		};
+		F723FAE81D046AE000336E9C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */,
+				F723FAE41D0467A400336E9C /* UIView+InnerShadow.h */,
+				F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F723FAE91D046AF200336E9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */,
+				F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */,
+				F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F723FAEA1D046AF900336E9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F723FAD31D04323700336E9C /* Currency.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
