@@ -124,6 +124,8 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
         scrollView.setContentOffset(scrollViewContentOffset, animated: animated)
     }
     
+    // MARK: UIScrollViewDelegate
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         guard let currencyLabels = currencyLabels else { return }
         guard let selectedLabel = selectedLabel else { return }
@@ -136,6 +138,13 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
             targetItem.setSelected(true)
             self.selectedLabel = targetItem
         }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        guard let currencyLabels = currencyLabels else { return }
+        guard let selectedLabel = selectedLabel else { return }
+        guard let selectedIndex = currencyLabels.indexOf(selectedLabel) else { return }
+        scrollToItemAtIndex(selectedIndex, animated: true)
     }
     
 }
