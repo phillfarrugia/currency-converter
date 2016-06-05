@@ -25,7 +25,13 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
     var delegate: CurrencySelectorViewDelegate?
     
     private var currencyLabels: [CurrencyLabel]?
-    private var selectedLabel: CurrencyLabel?
+    private var selectedLabel: CurrencyLabel? {
+        didSet {
+            if let selectedLabel = selectedLabel, let index = currencyLabels?.indexOf(selectedLabel) {
+                delegate?.selectorDidSelectItemAtIndex(index)
+            }
+        }
+    }
     
     var initialSelectionIndex: Int = 0
     
