@@ -20,7 +20,8 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
     static private let kCurrencyLabelWidth: CGFloat = 120
     static private let kCurrencyLabelMargin: CGFloat = 10
     
-    @IBOutlet weak private var scrollView: UIScrollView?
+    @IBOutlet weak private var shadowView: UIView!
+    @IBOutlet weak private var scrollView: UIScrollView!
     
     var delegate: CurrencySelectorViewDelegate?
     
@@ -41,10 +42,8 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
         super.awakeFromNib()
         
         clipsToBounds = false
-        
-        if let scrollView = scrollView {
-            scrollView.delegate = self
-        }
+        scrollView.delegate = self
+        shadowView.addInnerShadowWithRadius(3.0, andColor: UIColor(white: 0, alpha:0.15), inDirection: [.Top, .Bottom])
     }
     
     func reloadData() {

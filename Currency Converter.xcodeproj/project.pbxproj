@@ -20,6 +20,7 @@
 		F723FAD81D043DFC00336E9C /* NSJSONSerialization+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */; };
 		F723FADE1D045C1500336E9C /* DynamicWidthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */; };
 		F723FAE01D045F5800336E9C /* CurrencyExchangeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FADF1D045F5800336E9C /* CurrencyExchangeCalculator.swift */; };
+		F723FAE61D0467A400336E9C /* UIView+InnerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,9 @@
 		F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSJSONSerialization+Data.swift"; sourceTree = "<group>"; };
 		F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicWidthTextField.swift; sourceTree = "<group>"; };
 		F723FADF1D045F5800336E9C /* CurrencyExchangeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeCalculator.swift; sourceTree = "<group>"; };
+		F723FAE31D0467A300336E9C /* Currency Converter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Currency Converter-Bridging-Header.h"; sourceTree = "<group>"; };
+		F723FAE41D0467A400336E9C /* UIView+InnerShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+InnerShadow.h"; sourceTree = "<group>"; };
+		F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InnerShadow.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +104,13 @@
 				F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */,
 				F723FAD51D0432C800336E9C /* NetworkRequestManager.swift */,
 				F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */,
+				F723FAE41D0467A400336E9C /* UIView+InnerShadow.h */,
+				F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */,
 				F723FAB31D03C22000336E9C /* Main.storyboard */,
 				F723FAB61D03C22000336E9C /* Assets.xcassets */,
 				F723FAB81D03C22000336E9C /* LaunchScreen.storyboard */,
 				F723FABB1D03C22000336E9C /* Info.plist */,
+				F723FAE31D0467A300336E9C /* Currency Converter-Bridging-Header.h */,
 			);
 			path = "Currency Converter";
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 				F723FAD41D04323700336E9C /* Currency.swift in Sources */,
 				F723FAD21D03E9ED00336E9C /* CurrencyLabel.swift in Sources */,
 				F723FAD01D03C73E00336E9C /* CurrencySelectorView.swift in Sources */,
+				F723FAE61D0467A400336E9C /* UIView+InnerShadow.m in Sources */,
 				F723FAD61D0432C800336E9C /* NetworkRequestManager.swift in Sources */,
 				F723FAE01D045F5800336E9C /* CurrencyExchangeCalculator.swift in Sources */,
 				F723FAB01D03C22000336E9C /* AppDelegate.swift in Sources */,
@@ -357,10 +365,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Currency Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phillfarrugia.Currency-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Currency Converter/Currency Converter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -368,10 +379,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Currency Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phillfarrugia.Currency-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Currency Converter/Currency Converter-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -60,7 +60,6 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CurrencyExchangeViewController.didTapOutsideTextField))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
-        
         currencySelectorView.initialSelectionIndex = selectedCurrencyIndex
     }
     
