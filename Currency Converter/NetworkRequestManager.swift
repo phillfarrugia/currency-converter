@@ -30,13 +30,17 @@ class NetworkRequestManager {
         
         performNetworkRequest(request) { (dict, error) in
             if let error = error {
-                completion(rates: nil, error: error)
+                dispatch_async(dispatch_get_main_queue(), {
+                    completion(rates: nil, error: error)
+                })
             }
             
             // Map JSON Dictionary into Currency Models and pass to completion
             if let dict = dict, let rates = dict["rates"] as? [String: AnyObject] {
                 let currencies = Currency.currenciesWithDictionaries(rates)
-                completion(rates: currencies, error: nil)
+                dispatch_async(dispatch_get_main_queue(), { 
+                    completion(rates: currencies, error: nil)
+                })
             }
         }
     }
