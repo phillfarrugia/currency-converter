@@ -85,10 +85,12 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
         }
         
         // Check if Intitial Index is inside array bounds
-        if (initialSelectionIndex >= 0 && initialSelectionIndex < numberOfItems) {
-            scrollToItemAtIndex(initialSelectionIndex, animated: false)
-        } else {
-            scrollToItemAtIndex(0, animated: false)
+        if (numberOfItems > 0) {
+            if (initialSelectionIndex >= 0 && initialSelectionIndex < numberOfItems) {
+                scrollToItemAtIndex(initialSelectionIndex, animated: false)
+            } else {
+                scrollToItemAtIndex(0, animated: false)
+            }
         }
     }
     

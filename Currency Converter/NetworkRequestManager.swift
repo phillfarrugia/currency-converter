@@ -34,7 +34,7 @@ class NetworkRequestManager {
             }
             
             // Map JSON Dictionary into Currency Models and pass to completion
-            if let dict = dict, let rates = dict["rates"] as? [[String: AnyObject]] {
+            if let dict = dict, let rates = dict["rates"] as? [String: AnyObject] {
                 let currencies = Currency.currenciesWithDictionaries(rates)
                 completion(rates: currencies, error: nil)
             }

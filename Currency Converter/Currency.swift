@@ -35,26 +35,15 @@ struct Currency {
     }
     
     /**
-     Maps a JSON dictionary into a Currency object
-     - parameter dict:	JSON dictionary
-     - returns: Currency model
-     */
-    static func currencyWithDictionary(dict: [String: AnyObject]) -> Currency? {
-        guard let name = dict.keys.first else { return nil }
-        guard let exchangeRate = dict.values.first as? Double else { return nil }
-        return Currency(name: name, exchangeRate: exchangeRate)
-    }
-    
-    /**
      Converts an array of JSON dictionaries into Currency objects. If a conversion
      fails the object if filtered out of the array.
      - parameter dicts:	array of JSON dictionaries
      - returns: array of Currency objects
      */
-    static func currenciesWithDictionaries(dicts: [[String: AnyObject]]) -> [Currency] {
+    static func currenciesWithDictionaries(dicts: [String: AnyObject]) -> [Currency] {
         return dicts.map {
-            if let currency = Currency.currencyWithDictionary($0) {
-                return currency
+            if let exchangeRate = $0.1 as? Double {
+                return Currency(name: $0.0, exchangeRate: exchangeRate)
             }
             return nil
         }.flatMap { $0 }
