@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F723FAB01D03C22000336E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAAF1D03C22000336E9C /* AppDelegate.swift */; };
-		F723FAB21D03C22000336E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAB11D03C22000336E9C /* ViewController.swift */; };
+		F723FAB21D03C22000336E9C /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAB11D03C22000336E9C /* ExchangeViewController.swift */; };
 		F723FAB51D03C22000336E9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F723FAB31D03C22000336E9C /* Main.storyboard */; };
 		F723FAB71D03C22000336E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F723FAB61D03C22000336E9C /* Assets.xcassets */; };
 		F723FABA1D03C22000336E9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F723FAB81D03C22000336E9C /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		F723FAAC1D03C22000336E9C /* Currency Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Currency Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F723FAAF1D03C22000336E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F723FAB11D03C22000336E9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F723FAB11D03C22000336E9C /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		F723FAB41D03C22000336E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F723FAB61D03C22000336E9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F723FAB91D03C22000336E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				F723FAAF1D03C22000336E9C /* AppDelegate.swift */,
-				F723FAB11D03C22000336E9C /* ViewController.swift */,
+				F723FAB11D03C22000336E9C /* ExchangeViewController.swift */,
 				F723FAB31D03C22000336E9C /* Main.storyboard */,
 				F723FAB61D03C22000336E9C /* Assets.xcassets */,
 				F723FAB81D03C22000336E9C /* LaunchScreen.storyboard */,
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F723FAB21D03C22000336E9C /* ViewController.swift in Sources */,
+				F723FAB21D03C22000336E9C /* ExchangeViewController.swift in Sources */,
 				F723FAB01D03C22000336E9C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +390,7 @@
 				F723FACB1D03C22000336E9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F723FACC1D03C22000336E9C /* Build configuration list for PBXNativeTarget "Currency ConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +399,7 @@
 				F723FACE1D03C22000336E9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
