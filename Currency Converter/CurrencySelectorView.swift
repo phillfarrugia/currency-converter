@@ -25,6 +25,7 @@ class CurrencySelectorView: UIView {
     var delegate: CurrencySelectorViewDelegate?
     
     private var currencyLabels: [CurrencyLabel]?
+    private var selectedLabel: CurrencyLabel?
     
     var initialSelectionIndex: Int = 0 {
         didSet {
@@ -85,12 +86,18 @@ class CurrencySelectorView: UIView {
         guard let scrollView = scrollView else { return }
         guard let currencyLabels = currencyLabels else { return }
         
-        // Currency Label at Index
-        let selectedLabel = currencyLabels[selectedIndex]
-        selectedLabel.setSelected(true)
+        // Deselect Current Selection
+        if let selectedLabel = selectedLabel {
+            selectedLabel.setSelected(false)
+        }
+        
+        // New Selection Label at Index
+        let newSelection = currencyLabels[selectedIndex]
+        newSelection.setSelected(true)
+        self.selectedLabel = newSelection
         
         // Scroll to Currency Label center x
-        let xOffset = selectedLabel.center.x - self.center.x
+        let xOffset = newSelection.center.x - self.center.x
         scrollView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: true)
     }
 
