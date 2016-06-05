@@ -24,6 +24,7 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
         
         currencySelectorView.delegate = self
         
+        setupSubViews()
         requestLatestCurrencyData()
     }
 
@@ -34,6 +35,21 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
+    }
+    
+    private func setupSubViews() {
+        applyDottedUnderlineToView(baseAmountTextField, color: UIColor(red:0.30, green:0.27, blue:0.29, alpha:1.0))
+    }
+    
+    func applyDottedUnderlineToView(view: UIView, color: UIColor) {
+        let borderLayer = CAShapeLayer()
+        borderLayer.strokeColor = color.CGColor
+        borderLayer.fillColor = nil
+        borderLayer.lineWidth = 6
+        borderLayer.lineDashPattern = [6, 3]
+        borderLayer.path = UIBezierPath(rect: CGRectMake(0, view.bounds.height
+            , view.bounds.width, 3)).CGPath
+        view.layer.addSublayer(borderLayer)
     }
     
     private func requestLatestCurrencyData() {

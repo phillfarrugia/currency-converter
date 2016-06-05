@@ -54,17 +54,17 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        guard let delegate = delegate else { return }
+        guard let scrollView = scrollView else { return }
+        let numberOfItems = delegate.numberOfItems()
+        let itemIndexes = 0..<numberOfItems
+        
         // Remove existing Currency Labels
         if let currencyLabels = self.currencyLabels {
             for currencyLabel in currencyLabels {
                 currencyLabel.removeFromSuperview()
             }
         }
-        
-        guard let delegate = delegate else { return }
-        guard let scrollView = scrollView else { return }
-        let numberOfItems = delegate.numberOfItems()
-        let itemIndexes = 0..<numberOfItems
         
         // Calculate Scroll View Content Width & Content Inset
         let labelsWidth = (CGFloat(numberOfItems) * CurrencySelectorView.kCurrencyLabelWidth) + (CGFloat(numberOfItems) * CurrencySelectorView.kCurrencyLabelMargin)
