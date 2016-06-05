@@ -10,8 +10,10 @@ import UIKit
 
 @IBDesignable class CurrencyLabel: UILabel {
     
-    static private let kCurrencyLabelDeselectedColor = UIColor(red:0.26, green:0.87, blue:0.55, alpha:1.0)
-    static private let kCurrencyLabelSelectedColor = UIColor.whiteColor()
+    static let kCurrencyLabelDeselectedColor = UIColor(red:0.26, green:0.87, blue:0.55, alpha:1.0)
+    static let kCurrencyLabelSelectedColor = UIColor.whiteColor()
+    
+    private var isSelected: Bool = false
     
     // MARK: Initializers
     
@@ -41,6 +43,17 @@ import UIKit
         backgroundColor = .clearColor()
         font = UIFont(name: "HelveticaNeue-Medium", size: 56)
         textAlignment = .Center
+    }
+    
+    func setSelected(selected: Bool) {
+        if (selected) {
+            isSelected = true
+            textColor = CurrencyLabel.kCurrencyLabelSelectedColor
+        }
+        else {
+            isSelected = false
+            textColor = CurrencyLabel.kCurrencyLabelDeselectedColor
+        }
     }
 
 }
