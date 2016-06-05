@@ -11,6 +11,7 @@ import UIKit
 class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     
     @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
+    @IBOutlet weak private var baseAmountTextField: UITextField!
     
     private var currencies: [Currency]? {
         didSet {

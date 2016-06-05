@@ -61,6 +61,24 @@
                                     <outlet property="scrollView" destination="X9k-eu-LeU" id="neX-oL-i2J"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-ib-fx2" userLabel="Text Field Centered Container View">
+                                <rect key="frame" x="0.0" y="70" width="414" height="248"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="_$6,344.63" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-uw-9CC">
+                                        <rect key="frame" x="96" y="98" width="222" height="53"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6FS-uw-9CC" secondAttribute="trailing" constant="20" id="IWK-0p-hTz"/>
+                                    <constraint firstItem="6FS-uw-9CC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iiG-ib-fx2" secondAttribute="leading" constant="20" id="O7n-Ms-PtB"/>
+                                    <constraint firstItem="6FS-uw-9CC" firstAttribute="centerY" secondItem="iiG-ib-fx2" secondAttribute="centerY" id="gi8-eb-FN3"/>
+                                    <constraint firstItem="6FS-uw-9CC" firstAttribute="centerX" secondItem="iiG-ib-fx2" secondAttribute="centerX" id="w89-W9-yVG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20278444886207581" green="0.81154543161392212" blue="0.49529045820236206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -68,11 +86,16 @@
                             <constraint firstItem="MQ2-rr-hDm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="OuP-Tl-T5U"/>
                             <constraint firstItem="jqi-Yp-2hD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rjd-tm-GZX"/>
                             <constraint firstAttribute="trailing" secondItem="jqi-Yp-2hD" secondAttribute="trailing" id="RrU-ew-L5A"/>
+                            <constraint firstAttribute="trailing" secondItem="iiG-ib-fx2" secondAttribute="trailing" id="XIo-di-wTV"/>
+                            <constraint firstItem="iiG-ib-fx2" firstAttribute="top" secondItem="MQ2-rr-hDm" secondAttribute="bottom" id="Xjn-9u-Nmo"/>
+                            <constraint firstItem="iiG-ib-fx2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZlC-Yd-ae3"/>
                             <constraint firstItem="jqi-Yp-2hD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hPP-B1-m2E"/>
+                            <constraint firstItem="jqi-Yp-2hD" firstAttribute="top" secondItem="iiG-ib-fx2" secondAttribute="bottom" id="uNU-mJ-9fQ"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="baseAmountTextField" destination="6FS-uw-9CC" id="5dq-yL-KGG"/>
                         <outlet property="currencySelectorView" destination="jqi-Yp-2hD" id="NFl-Kh-IJs"/>
                     </connections>
                 </viewController>
