@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Exchange View Controller-->
+        <!--Currency Exchange View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ExchangeViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CurrencyExchangeViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -111,6 +111,12 @@
                                     <constraint firstItem="Tfj-Pv-7ba" firstAttribute="centerY" secondItem="iiG-ib-fx2" secondAttribute="centerY" id="dDq-7a-1yP"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_2, 954.69" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR5-El-iAM">
+                                <rect key="frame" x="104" y="468" width="206" height="53"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20278444886207581" green="0.81154543161392212" blue="0.49529045820236206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -118,10 +124,12 @@
                             <constraint firstItem="MQ2-rr-hDm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="OuP-Tl-T5U"/>
                             <constraint firstItem="jqi-Yp-2hD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rjd-tm-GZX"/>
                             <constraint firstAttribute="trailing" secondItem="jqi-Yp-2hD" secondAttribute="trailing" id="RrU-ew-L5A"/>
+                            <constraint firstItem="UR5-El-iAM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W6r-yO-CdA"/>
                             <constraint firstAttribute="trailing" secondItem="iiG-ib-fx2" secondAttribute="trailing" id="XIo-di-wTV"/>
                             <constraint firstItem="iiG-ib-fx2" firstAttribute="top" secondItem="MQ2-rr-hDm" secondAttribute="bottom" id="Xjn-9u-Nmo"/>
                             <constraint firstItem="iiG-ib-fx2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZlC-Yd-ae3"/>
                             <constraint firstItem="jqi-Yp-2hD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hPP-B1-m2E"/>
+                            <constraint firstItem="UR5-El-iAM" firstAttribute="top" secondItem="X9k-eu-LeU" secondAttribute="bottom" constant="50" id="kIc-Kt-jOS"/>
                             <constraint firstItem="jqi-Yp-2hD" firstAttribute="top" secondItem="iiG-ib-fx2" secondAttribute="bottom" id="uNU-mJ-9fQ"/>
                         </constraints>
                     </view>

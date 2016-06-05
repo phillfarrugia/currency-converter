@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate, UITextFieldDelegate {
+class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
     @IBOutlet weak var baseCurrencyLabel: UILabel!
@@ -42,17 +42,17 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate, UI
     }
     
     private func setupSubViews() {
-        baseCurrencyLabel.text = ExchangeViewController.baseCurrencyName
+        baseCurrencyLabel.text = CurrencyExchangeViewController.baseCurrencyName
         baseAmountTextField.delegate = self
-        baseAmountTextField.addTarget(self, action: #selector(ExchangeViewController.textFieldTextDidChange(_:)), forControlEvents: .EditingChanged)
+        baseAmountTextField.addTarget(self, action: #selector(CurrencyExchangeViewController.textFieldTextDidChange(_:)), forControlEvents: .EditingChanged)
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ExchangeViewController.didTapOutsideTextField))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CurrencyExchangeViewController.didTapOutsideTextField))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func requestLatestCurrencyData() {
-        NetworkRequestManager.exchangeRatesRequest(ExchangeViewController.baseCurrencyName, conversionCurrencies: ExchangeViewController.conversionCurrencyNames) { (rates, error) in
+        NetworkRequestManager.exchangeRatesRequest(CurrencyExchangeViewController.baseCurrencyName, conversionCurrencies: CurrencyExchangeViewController.conversionCurrencyNames) { (rates, error) in
             if let error = error {
                 // TODO: Present Real Error Message
                 print(error)
