@@ -10,7 +10,7 @@ import UIKit
 
 protocol CurrencySelectorViewDelegate {
     func numberOfItems() -> Int
-    func textForItemAtIndex(index: Int) -> String
+    func textForItemAtIndex(index: Int) -> String?
     func selectorDidSelectItemAtIndex(index: Int)
 }
 
@@ -45,6 +45,10 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
         }
     }
     
+    func reloadData() {
+        // TODO: Some stuff
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -67,8 +71,11 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
         
         // Map new items into Currency Labels
         self.currencyLabels = itemIndexes.map {
-            return currencyLabelForIndex($0, text: delegate.textForItemAtIndex($0))
-        }
+            if let currencyText = delegate.textForItemAtIndex($0) {
+                return currencyLabelForIndex($0, text: currencyText)
+            }
+            return nil
+        }.flatMap { $0 }
         
         // Add new Currency Labels as subviews
         if let currencyLabels = self.currencyLabels {

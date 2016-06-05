@@ -12,18 +12,18 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     
     @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
     
-    private let currencies = [ "CAD", "EUR", "GBP", "JPY", "USD" ]
+    private var currencies: [Currency]? {
+        didSet {
+            currencySelectorView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currencySelectorView.delegate = self
         
-        let baseCurrency = Currency(name: "AUD")
-        let conversionCurrencies = Currency.currenciesWithNames([ "CAD", "EUR", "GBP", "JPY", "USD" ])
-        NetworkRequestManager.exchangeRatesRequest(baseCurrency, conversionCurrencies: conversionCurrencies) {
-            //
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,19 +35,33 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
         return .LightContent
     }
     
+    private func requestLatestCurrencyData() {
+        NetworkRequestManager.exchangeRatesRequest("AUD", conversionCurrencies: [ "CAD", "EUR", "GBP", "JPY", "USD" ]) { (rates, error) in
+            if let error = error {
+                // TODO: Present Real Error Message
+                print(error)
+            }
+            
+            if let rates = rates {
+                self.currencies = rates
+            }
+        }
+    }
+    
     // MARK: CurrencySelectorViewDelegate
     
     func numberOfItems() -> Int {
+        guard let currencies = currencies else { return 0 }
         return currencies.count
     }
     
-    func textForItemAtIndex(index: Int) -> String {
-        return currencies[index]
+    func textForItemAtIndex(index: Int) -> String? {
+        guard let currencies = currencies else { return nil }
+        return currencies[index].name
     }
     
     func selectorDidSelectItemAtIndex(index: Int) {
         // TODO: Do something when a user selects a specific currency
-        let selectedCurrency = currencies[index]
     }
 
 }
