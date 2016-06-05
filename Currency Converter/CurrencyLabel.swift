@@ -10,6 +10,9 @@ import UIKit
 
 @IBDesignable class CurrencyLabel: UILabel {
     
+    static private let kCurrencyLabelDeselectedColor = UIColor(red:0.26, green:0.87, blue:0.55, alpha:1.0)
+    static private let kCurrencyLabelSelectedColor = UIColor.whiteColor()
+    
     // MARK: Initializers
     
     override func awakeFromNib() {
@@ -34,7 +37,7 @@ import UIKit
     // MARK: Styles
     
     private func configureStyle() {
-        textColor = .whiteColor()
+        textColor = CurrencyLabel.kCurrencyLabelDeselectedColor
         backgroundColor = .clearColor()
         font = UIFont(name: "HelveticaNeue-Medium", size: 56)
         textAlignment = .Center
