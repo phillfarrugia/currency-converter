@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ExchangeViewController: UIViewController {
+class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     
     @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.currencySelectorView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +25,20 @@ class ExchangeViewController: UIViewController {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
+    }
+    
+    // MARK: CurrencySelectorViewDelegate
+    
+    func numberOfItems() -> Int {
+        return 0
+    }
+    
+    func textForItemAtIndex(index: Int) -> String {
+        return ""
+    }
+    
+    func selectorDidSelectItemAtIndex(index: Int) {
+        // TODO: Do something when a user selects a specific currency
     }
 
 }

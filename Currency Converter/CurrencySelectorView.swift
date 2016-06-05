@@ -8,7 +8,17 @@
 
 import UIKit
 
+protocol CurrencySelectorViewDelegate {
+    
+    func numberOfItems() -> Int
+    func textForItemAtIndex(index: Int) -> String
+    func selectorDidSelectItemAtIndex(index: Int)
+    
+}
+
 class CurrencySelectorView: UIView {
+    
+    var delegate: CurrencySelectorViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
