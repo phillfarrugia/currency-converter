@@ -61,7 +61,7 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     }
     
     func selectorDidSelectItemAtIndex(index: Int) {
-        // TODO: Do something when a user selects a specific currency
+        print("Index Selected: \(index)")
     }
 
 }

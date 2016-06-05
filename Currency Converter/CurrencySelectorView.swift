@@ -28,7 +28,9 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
     private var selectedLabel: CurrencyLabel? {
         didSet {
             if let selectedLabel = selectedLabel, let index = currencyLabels?.indexOf(selectedLabel) {
-                delegate?.selectorDidSelectItemAtIndex(index)
+                if (selectedLabel != oldValue) {
+                    delegate?.selectorDidSelectItemAtIndex(index)
+                }
             }
         }
     }
@@ -46,7 +48,7 @@ class CurrencySelectorView: UIView, UIScrollViewDelegate {
     }
     
     func reloadData() {
-        // TODO: Some stuff
+        self.setNeedsLayout()
     }
     
     override func layoutSubviews() {
