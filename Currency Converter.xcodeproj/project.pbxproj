@@ -15,6 +15,7 @@
 		F723FAC51D03C22000336E9C /* Currency_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAC41D03C22000336E9C /* Currency_ConverterTests.swift */; };
 		F723FAD01D03C73E00336E9C /* CurrencySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */; };
 		F723FAD21D03E9ED00336E9C /* CurrencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */; };
+		F723FAD41D04323700336E9C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FAD31D04323700336E9C /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		F723FAC61D03C22000336E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectorView.swift; sourceTree = "<group>"; };
 		F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLabel.swift; sourceTree = "<group>"; };
+		F723FAD31D04323700336E9C /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				F723FAAF1D03C22000336E9C /* AppDelegate.swift */,
 				F723FAB11D03C22000336E9C /* ExchangeViewController.swift */,
+				F723FAD31D04323700336E9C /* Currency.swift */,
 				F723FACF1D03C73E00336E9C /* CurrencySelectorView.swift */,
 				F723FAD11D03E9ED00336E9C /* CurrencyLabel.swift */,
 				F723FAB31D03C22000336E9C /* Main.storyboard */,
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F723FAB21D03C22000336E9C /* ExchangeViewController.swift in Sources */,
+				F723FAD41D04323700336E9C /* Currency.swift in Sources */,
 				F723FAD21D03E9ED00336E9C /* CurrencyLabel.swift in Sources */,
 				F723FAD01D03C73E00336E9C /* CurrencySelectorView.swift in Sources */,
 				F723FAB01D03C22000336E9C /* AppDelegate.swift in Sources */,
