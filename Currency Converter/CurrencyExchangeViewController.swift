@@ -54,9 +54,11 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     
     private func setupSubViews() {
         baseCurrencyLabel.text = CurrencyExchangeViewController.baseCurrencyName
+        baseAmountTextField.text = "0.00"
         baseAmountTextField.delegate = self
         baseAmountTextField.addTarget(self, action: #selector(CurrencyExchangeViewController.textFieldTextDidChange(_:)), forControlEvents: .EditingChanged)
         
+        // Resign Keyboard on tap outside Text Field
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CurrencyExchangeViewController.didTapOutsideTextField))
         tapGestureRecognizer.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGestureRecognizer)

@@ -31,23 +31,23 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-ib-fx2" userLabel="Text Field Centered Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfj-Pv-7ba">
-                                                <rect key="frame" x="240" y="62" width="120" height="92"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tfj-Pv-7ba">
+                                                <rect key="frame" x="240" y="56" width="120" height="104"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JV-Ev-eVt">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="_AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JV-Ev-eVt">
                                                         <rect key="frame" x="18" y="0.0" width="84" height="39"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="32"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-uw-9CC" customClass="DynamicWidthTextField" customModule="Currency_Converter" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="39" width="90" height="53"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-uw-9CC" customClass="DynamicWidthTextField" customModule="Currency_Converter" customModuleProvider="target">
+                                                        <rect key="frame" x="30" y="51" width="90" height="53"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYz-xF-AK0">
-                                                        <rect key="frame" x="0.0" y="39" width="25" height="53"/>
+                                                        <rect key="frame" x="0.0" y="51" width="25" height="53"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="25" id="mYf-9s-dJh"/>
                                                         </constraints>
@@ -66,7 +66,7 @@
                                                     <constraint firstItem="9JV-Ev-eVt" firstAttribute="top" secondItem="Tfj-Pv-7ba" secondAttribute="top" id="UtP-Oo-xkl"/>
                                                     <constraint firstAttribute="trailing" secondItem="6FS-uw-9CC" secondAttribute="trailing" id="VMO-N9-qRb"/>
                                                     <constraint firstItem="6FS-uw-9CC" firstAttribute="leading" secondItem="JYz-xF-AK0" secondAttribute="trailing" constant="5" id="gRb-Ix-QuJ"/>
-                                                    <constraint firstItem="6FS-uw-9CC" firstAttribute="top" secondItem="9JV-Ev-eVt" secondAttribute="bottom" id="pAo-fD-oPt"/>
+                                                    <constraint firstItem="6FS-uw-9CC" firstAttribute="top" secondItem="9JV-Ev-eVt" secondAttribute="bottom" constant="12" id="pAo-fD-oPt"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

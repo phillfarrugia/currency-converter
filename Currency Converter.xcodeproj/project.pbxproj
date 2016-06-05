@@ -124,8 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */,
-				F723FAE41D0467A400336E9C /* UIView+InnerShadow.h */,
-				F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */,
+				F723FAEB1D046C6700336E9C /* Third Party */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -146,6 +145,15 @@
 				F723FAD31D04323700336E9C /* Currency.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		F723FAEB1D046C6700336E9C /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				F723FAE41D0467A400336E9C /* UIView+InnerShadow.h */,
+				F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */,
+			);
+			name = "Third Party";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
