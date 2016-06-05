@@ -12,10 +12,12 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     
     @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
     
+    private let currencies = [ "CAD", "EUR", "GBP", "JPY", "USD" ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.currencySelectorView.delegate = self
+        currencySelectorView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,15 +32,16 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     // MARK: CurrencySelectorViewDelegate
     
     func numberOfItems() -> Int {
-        return 0
+        return currencies.count
     }
     
     func textForItemAtIndex(index: Int) -> String {
-        return ""
+        return currencies[index]
     }
     
     func selectorDidSelectItemAtIndex(index: Int) {
         // TODO: Do something when a user selects a specific currency
+        let selectedCurrency = currencies[index]
     }
 
 }
