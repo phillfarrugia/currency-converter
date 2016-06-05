@@ -64,19 +64,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-ib-fx2" userLabel="Text Field Centered Container View">
                                 <rect key="frame" x="0.0" y="70" width="414" height="248"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="_$6,344.63" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-uw-9CC">
-                                        <rect key="frame" x="96" y="98" width="222" height="53"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfj-Pv-7ba">
+                                        <rect key="frame" x="96" y="67" width="222" height="114"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JV-Ev-eVt">
+                                                <rect key="frame" x="53" y="0.0" width="115" height="53"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="_$6,344.63" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-uw-9CC">
+                                                <rect key="frame" x="0.0" y="61" width="222" height="53"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="9JV-Ev-eVt" firstAttribute="centerX" secondItem="Tfj-Pv-7ba" secondAttribute="centerX" id="22b-PP-TCc"/>
+                                            <constraint firstAttribute="bottom" secondItem="6FS-uw-9CC" secondAttribute="bottom" id="2BO-hF-frT"/>
+                                            <constraint firstItem="6FS-uw-9CC" firstAttribute="leading" secondItem="Tfj-Pv-7ba" secondAttribute="leading" id="Hgl-G8-cp2"/>
+                                            <constraint firstItem="9JV-Ev-eVt" firstAttribute="top" secondItem="Tfj-Pv-7ba" secondAttribute="top" id="UtP-Oo-xkl"/>
+                                            <constraint firstAttribute="trailing" secondItem="6FS-uw-9CC" secondAttribute="trailing" id="VMO-N9-qRb"/>
+                                            <constraint firstItem="6FS-uw-9CC" firstAttribute="top" secondItem="9JV-Ev-eVt" secondAttribute="bottom" constant="8" id="pAo-fD-oPt"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6FS-uw-9CC" secondAttribute="trailing" constant="20" id="IWK-0p-hTz"/>
-                                    <constraint firstItem="6FS-uw-9CC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iiG-ib-fx2" secondAttribute="leading" constant="20" id="O7n-Ms-PtB"/>
-                                    <constraint firstItem="6FS-uw-9CC" firstAttribute="centerY" secondItem="iiG-ib-fx2" secondAttribute="centerY" id="gi8-eb-FN3"/>
-                                    <constraint firstItem="6FS-uw-9CC" firstAttribute="centerX" secondItem="iiG-ib-fx2" secondAttribute="centerX" id="w89-W9-yVG"/>
+                                    <constraint firstItem="Tfj-Pv-7ba" firstAttribute="centerX" secondItem="iiG-ib-fx2" secondAttribute="centerX" id="6nr-pP-aDe"/>
+                                    <constraint firstItem="Tfj-Pv-7ba" firstAttribute="centerY" secondItem="iiG-ib-fx2" secondAttribute="centerY" id="dDq-7a-1yP"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -96,6 +114,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="baseAmountTextField" destination="6FS-uw-9CC" id="5dq-yL-KGG"/>
+                        <outlet property="baseCurrencyLabel" destination="9JV-Ev-eVt" id="Muc-6P-c4B"/>
                         <outlet property="currencySelectorView" destination="jqi-Yp-2hD" id="NFl-Kh-IJs"/>
                     </connections>
                 </viewController>

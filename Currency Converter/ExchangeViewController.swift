@@ -11,7 +11,11 @@ import UIKit
 class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     
     @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
+    @IBOutlet weak var baseCurrencyLabel: UILabel!
     @IBOutlet weak private var baseAmountTextField: UITextField!
+    
+    static private let baseCurrencyName = "AUD"
+    static private let conversionCurrencyNames = [ "CAD", "EUR", "GBP", "JPY", "USD" ]
     
     private var currencies: [Currency]? {
         didSet {
@@ -38,6 +42,8 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     }
     
     private func setupSubViews() {
+        
+        baseCurrencyLabel.text = ExchangeViewController.baseCurrencyName
         applyDottedUnderlineToView(baseAmountTextField, color: UIColor(red:0.30, green:0.27, blue:0.29, alpha:1.0))
     }
     
@@ -53,7 +59,7 @@ class ExchangeViewController: UIViewController, CurrencySelectorViewDelegate {
     }
     
     private func requestLatestCurrencyData() {
-        NetworkRequestManager.exchangeRatesRequest("AUD", conversionCurrencies: [ "CAD", "EUR", "GBP", "JPY", "USD" ]) { (rates, error) in
+        NetworkRequestManager.exchangeRatesRequest(ExchangeViewController.baseCurrencyName, conversionCurrencies: ExchangeViewController.conversionCurrencyNames) { (rates, error) in
             if let error = error {
                 // TODO: Present Real Error Message
                 print(error)
