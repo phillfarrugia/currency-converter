@@ -10,7 +10,7 @@ import UIKit
 
 class ExchangeViewController: UIViewController {
     
-    @IBOutlet weak private var currencySelectorView: HorizontalLabelSelectorView!
+    @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

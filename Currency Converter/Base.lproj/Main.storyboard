@@ -24,11 +24,31 @@
                                     <constraint firstAttribute="height" constant="20" id="wDI-22-prD"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-Yp-2hD" customClass="HorizontalLabelSelectorView" customModule="Currency_Converter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="293" width="414" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqi-Yp-2hD" customClass="CurrencySelectorView" customModule="Currency_Converter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="318" width="414" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Indicator_1" translatesAutoresizingMaskIntoConstraints="NO" id="ja0-nK-XYA">
+                                        <rect key="frame" x="197" y="-5" width="20" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="1zf-iE-Jtm"/>
+                                            <constraint firstAttribute="height" constant="14" id="e4W-9W-LTo"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Indicator_2" translatesAutoresizingMaskIntoConstraints="NO" id="2dF-0K-dmp">
+                                        <rect key="frame" x="197" y="91" width="20" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="ixd-Ai-IQp"/>
+                                            <constraint firstAttribute="width" constant="20" id="z4e-kC-Khl"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20684212446212769" green="0.75636470317840576" blue="0.46858000755310059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="GGP-Z3-wpu"/>
+                                    <constraint firstAttribute="height" constant="100" id="GGP-Z3-wpu"/>
+                                    <constraint firstItem="ja0-nK-XYA" firstAttribute="top" secondItem="jqi-Yp-2hD" secondAttribute="top" constant="-5" id="ILm-jM-XY7"/>
+                                    <constraint firstItem="2dF-0K-dmp" firstAttribute="centerX" secondItem="jqi-Yp-2hD" secondAttribute="centerX" id="Mwk-xI-0DG"/>
+                                    <constraint firstItem="ja0-nK-XYA" firstAttribute="centerX" secondItem="jqi-Yp-2hD" secondAttribute="centerX" id="Wio-cF-dBu"/>
+                                    <constraint firstAttribute="bottom" secondItem="2dF-0K-dmp" secondAttribute="bottom" constant="-5" id="bUr-1R-Qfh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -51,6 +71,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Indicator_1" width="20" height="14"/>
+        <image name="Indicator_2" width="20" height="14"/>
         <image name="Logo" width="191" height="20"/>
     </resources>
 </document>

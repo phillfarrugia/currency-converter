@@ -8,6 +8,12 @@
 
 import UIKit
 
-class HorizontalLabelSelectorView: UIView {
+class CurrencySelectorView: UIView {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.clipsToBounds = false
+    }
 
 }
