@@ -31,17 +31,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-ib-fx2" userLabel="Text Field Centered Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="215"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tfj-Pv-7ba">
-                                                <rect key="frame" x="240" y="56" width="120" height="104"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfj-Pv-7ba">
+                                                <rect key="frame" x="258" y="56" width="84" height="104"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="_AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JV-Ev-eVt">
-                                                        <rect key="frame" x="18" y="0.0" width="84" height="39"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JV-Ev-eVt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="39"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="32"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-uw-9CC" customClass="DynamicWidthTextField" customModule="Currency_Converter" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="51" width="90" height="53"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-uw-9CC" customClass="DynamicWidthTextField" customModule="Currency_Converter" customModuleProvider="target">
+                                                        <rect key="frame" x="30" y="51" width="54" height="53"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -62,6 +62,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="6FS-uw-9CC" secondAttribute="bottom" id="2BO-hF-frT"/>
                                                     <constraint firstItem="JYz-xF-AK0" firstAttribute="bottom" secondItem="6FS-uw-9CC" secondAttribute="bottom" id="37y-s8-TKH"/>
                                                     <constraint firstItem="JYz-xF-AK0" firstAttribute="top" secondItem="6FS-uw-9CC" secondAttribute="top" id="AKf-Jt-elt"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="AwA-A1-4cn"/>
                                                     <constraint firstItem="JYz-xF-AK0" firstAttribute="leading" secondItem="Tfj-Pv-7ba" secondAttribute="leading" id="Kt8-eK-E0C"/>
                                                     <constraint firstItem="9JV-Ev-eVt" firstAttribute="top" secondItem="Tfj-Pv-7ba" secondAttribute="top" id="UtP-Oo-xkl"/>
                                                     <constraint firstAttribute="trailing" secondItem="6FS-uw-9CC" secondAttribute="trailing" id="VMO-N9-qRb"/>
