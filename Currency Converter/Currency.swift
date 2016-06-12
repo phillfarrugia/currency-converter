@@ -10,13 +10,13 @@ import Foundation
 
 struct Currency {
     
-    let name: String
+    let code: String
     let exchangeRate: Double
     
     // MARK: Initializers
     
-    init(name: String, exchangeRate: Double = 0) {
-        self.name = name
+    init(code: String, exchangeRate: Double = 0) {
+        self.code = code
         self.exchangeRate = exchangeRate
     }
     
@@ -31,7 +31,7 @@ struct Currency {
     static func currenciesWithDictionaries(dicts: [String: AnyObject]) -> [Currency] {
         return dicts.map {
             if let exchangeRate = $0.1 as? Double {
-                return Currency(name: $0.0, exchangeRate: exchangeRate)
+                return Currency(code: $0.0, exchangeRate: exchangeRate)
             }
             return nil
         }.flatMap { $0 }

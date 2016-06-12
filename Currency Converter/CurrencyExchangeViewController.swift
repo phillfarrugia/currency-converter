@@ -16,11 +16,11 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     @IBOutlet weak var outputCurrencyLabel: UILabel!
     @IBOutlet weak private var baseAmountTextField: DynamicWidthTextField!
     
-    static private let baseCurrencyName = "AUD"
-    static private let conversionCurrencyNames = [ "CAD", "EUR", "GBP", "JPY", "USD" ]
+    static private let baseCurrencyCode = "AUD"
+    static private let conversionCurrencyCodes = [ "CAD", "EUR", "GBP", "JPY", "USD" ]
     static private let kMaximumDigits = 10
     
-    let exchangeCalculator = CurrencyExchangeCalculator(baseCurrency: Currency(name: baseCurrencyName))
+    let exchangeCalculator = CurrencyExchangeCalculator(baseCurrency: Currency(code: baseCurrencyCode))
     
     private var selectedCurrencyIndex: Int = 2
     
@@ -54,7 +54,7 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     }
     
     private func setupSubViews() {
-        baseCurrencyLabel.text = CurrencyExchangeViewController.baseCurrencyName
+        baseCurrencyLabel.text = CurrencyExchangeViewController.baseCurrencyCode
         baseAmountTextField.text = "0.00"
         baseAmountTextField.delegate = self
         baseAmountTextField.addTarget(self, action: #selector(CurrencyExchangeViewController.textFieldTextDidChange(_:)), forControlEvents: .EditingChanged)
@@ -74,7 +74,7 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     }
     
     private func requestLatestCurrencyData() {
-        NetworkRequestManager.exchangeRatesRequest(CurrencyExchangeViewController.baseCurrencyName, conversionCurrencies: CurrencyExchangeViewController.conversionCurrencyNames) { (rates, error) in
+        NetworkRequestManager.exchangeRatesRequest(CurrencyExchangeViewController.baseCurrencyCode, conversionCurrencies: CurrencyExchangeViewController.conversionCurrencyCodes) { (rates, error) in
             if let error = error {
                 print(error) // TODO: Present Real Error Message
             }
@@ -104,7 +104,7 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     
     func textForItemAtIndex(index: Int) -> String? {
         guard let currencies = currencies else { return nil }
-        return currencies[index].name
+        return currencies[index].code
     }
     
     func selectorDidSelectItemAtIndex(index: Int) {
