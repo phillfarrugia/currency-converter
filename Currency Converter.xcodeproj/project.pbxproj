@@ -21,10 +21,18 @@
 		F723FADE1D045C1500336E9C /* DynamicWidthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FADD1D045C1500336E9C /* DynamicWidthTextField.swift */; };
 		F723FAE01D045F5800336E9C /* CurrencyExchangeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FADF1D045F5800336E9C /* CurrencyExchangeCalculator.swift */; };
 		F723FAE61D0467A400336E9C /* UIView+InnerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */; };
+		F74A72271D0D9CE100D9D8D3 /* Currency_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A72261D0D9CE100D9D8D3 /* Currency_ConverterUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F723FAC11D03C22000336E9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F723FAA41D03C22000336E9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F723FAAB1D03C22000336E9C;
+			remoteInfo = "Currency Converter";
+		};
+		F74A72291D0D9CE100D9D8D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F723FAA41D03C22000336E9C /* Project object */;
 			proxyType = 1;
@@ -54,6 +62,9 @@
 		F723FAE31D0467A300336E9C /* Currency Converter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Currency Converter-Bridging-Header.h"; sourceTree = "<group>"; };
 		F723FAE41D0467A400336E9C /* UIView+InnerShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+InnerShadow.h"; sourceTree = "<group>"; };
 		F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+InnerShadow.m"; sourceTree = "<group>"; };
+		F74A72241D0D9CE100D9D8D3 /* Currency ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Currency ConverterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F74A72261D0D9CE100D9D8D3 /* Currency_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency_ConverterUITests.swift; sourceTree = "<group>"; };
+		F74A72281D0D9CE100D9D8D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +82,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F74A72211D0D9CE100D9D8D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,6 +97,7 @@
 			children = (
 				F723FAAE1D03C22000336E9C /* Currency Converter */,
 				F723FAC31D03C22000336E9C /* Currency ConverterTests */,
+				F74A72251D0D9CE100D9D8D3 /* Currency ConverterUITests */,
 				F723FAAD1D03C22000336E9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +107,7 @@
 			children = (
 				F723FAAC1D03C22000336E9C /* Currency Converter.app */,
 				F723FAC01D03C22000336E9C /* Currency ConverterTests.xctest */,
+				F74A72241D0D9CE100D9D8D3 /* Currency ConverterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +176,15 @@
 			name = "Third Party";
 			sourceTree = "<group>";
 		};
+		F74A72251D0D9CE100D9D8D3 /* Currency ConverterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F74A72261D0D9CE100D9D8D3 /* Currency_ConverterUITests.swift */,
+				F74A72281D0D9CE100D9D8D3 /* Info.plist */,
+			);
+			path = "Currency ConverterUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +223,24 @@
 			productReference = F723FAC01D03C22000336E9C /* Currency ConverterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F74A72231D0D9CE100D9D8D3 /* Currency ConverterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F74A722D1D0D9CE100D9D8D3 /* Build configuration list for PBXNativeTarget "Currency ConverterUITests" */;
+			buildPhases = (
+				F74A72201D0D9CE100D9D8D3 /* Sources */,
+				F74A72211D0D9CE100D9D8D3 /* Frameworks */,
+				F74A72221D0D9CE100D9D8D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F74A722A1D0D9CE100D9D8D3 /* PBXTargetDependency */,
+			);
+			name = "Currency ConverterUITests";
+			productName = "Currency ConverterUITests";
+			productReference = F74A72241D0D9CE100D9D8D3 /* Currency ConverterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -208,6 +255,10 @@
 						CreatedOnToolsVersion = 7.3;
 					};
 					F723FABF1D03C22000336E9C = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F723FAAB1D03C22000336E9C;
+					};
+					F74A72231D0D9CE100D9D8D3 = {
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = F723FAAB1D03C22000336E9C;
 					};
@@ -228,6 +279,7 @@
 			targets = (
 				F723FAAB1D03C22000336E9C /* Currency Converter */,
 				F723FABF1D03C22000336E9C /* Currency ConverterTests */,
+				F74A72231D0D9CE100D9D8D3 /* Currency ConverterUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +296,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F723FABE1D03C22000336E9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F74A72221D0D9CE100D9D8D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,6 +337,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F74A72201D0D9CE100D9D8D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74A72271D0D9CE100D9D8D3 /* Currency_ConverterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -285,6 +352,11 @@
 			isa = PBXTargetDependency;
 			target = F723FAAB1D03C22000336E9C /* Currency Converter */;
 			targetProxy = F723FAC11D03C22000336E9C /* PBXContainerItemProxy */;
+		};
+		F74A722A1D0D9CE100D9D8D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F723FAAB1D03C22000336E9C /* Currency Converter */;
+			targetProxy = F74A72291D0D9CE100D9D8D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -444,6 +516,28 @@
 			};
 			name = Release;
 		};
+		F74A722B1D0D9CE100D9D8D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Currency ConverterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phillfarrugia.Currency-ConverterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Currency Converter";
+			};
+			name = Debug;
+		};
+		F74A722C1D0D9CE100D9D8D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Currency ConverterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.phillfarrugia.Currency-ConverterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Currency Converter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,6 +567,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F74A722D1D0D9CE100D9D8D3 /* Build configuration list for PBXNativeTarget "Currency ConverterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74A722B1D0D9CE100D9D8D3 /* Debug */,
+				F74A722C1D0D9CE100D9D8D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
