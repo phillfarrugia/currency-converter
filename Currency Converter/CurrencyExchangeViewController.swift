@@ -70,7 +70,7 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
         super.viewDidLayoutSubviews()
         
         underlineView.clipsToBounds = true
-        applyDottedUnderlineToView(underlineView, color: UIColor(red:0.30, green:0.27, blue:0.29, alpha:1.0))
+        UIView.applyDottedUnderlineToView(underlineView, color: UIColor(red:0.30, green:0.27, blue:0.29, alpha:1.0))
     }
     
     private func requestLatestCurrencyData() {
@@ -80,19 +80,9 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
             }
             
             if let rates = rates {
-                self.currencies = rates // TODO: Save it to the disk and re-read it on startup
+                self.currencies = rates
             }
         }
-    }
-    
-    func applyDottedUnderlineToView(view: UIView, color: UIColor) {
-        let borderLayer = CAShapeLayer()
-        borderLayer.strokeColor = color.CGColor
-        borderLayer.fillColor = nil
-        borderLayer.lineWidth = 3
-        borderLayer.lineDashPattern = [4, 2]
-        borderLayer.path = UIBezierPath(rect: CGRectMake(0, view.bounds.height, view.bounds.width, 6)).CGPath
-        view.layer.addSublayer(borderLayer)
     }
     
     // MARK: CurrencySelectorViewDelegate

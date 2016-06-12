@@ -22,6 +22,7 @@
 		F723FAE01D045F5800336E9C /* CurrencyExchangeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723FADF1D045F5800336E9C /* CurrencyExchangeCalculator.swift */; };
 		F723FAE61D0467A400336E9C /* UIView+InnerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F723FAE51D0467A400336E9C /* UIView+InnerShadow.m */; };
 		F74A72271D0D9CE100D9D8D3 /* Currency_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A72261D0D9CE100D9D8D3 /* Currency_ConverterUITests.swift */; };
+		F78CB4DB1D0DA6CF00B4E3F6 /* UIView+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78CB4DA1D0DA6CF00B4E3F6 /* UIView+Underline.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F74A72241D0D9CE100D9D8D3 /* Currency ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Currency ConverterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74A72261D0D9CE100D9D8D3 /* Currency_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency_ConverterUITests.swift; sourceTree = "<group>"; };
 		F74A72281D0D9CE100D9D8D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F78CB4DA1D0DA6CF00B4E3F6 /* UIView+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Underline.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F723FAD71D043DFC00336E9C /* NSJSONSerialization+Data.swift */,
+				F78CB4DA1D0DA6CF00B4E3F6 /* UIView+Underline.swift */,
 				F723FAEB1D046C6700336E9C /* Third Party */,
 			);
 			name = Extensions;
@@ -321,6 +324,7 @@
 				F723FAD41D04323700336E9C /* Currency.swift in Sources */,
 				F723FAD21D03E9ED00336E9C /* CurrencyLabel.swift in Sources */,
 				F723FAD01D03C73E00336E9C /* CurrencySelectorView.swift in Sources */,
+				F78CB4DB1D0DA6CF00B4E3F6 /* UIView+Underline.swift in Sources */,
 				F723FAE61D0467A400336E9C /* UIView+InnerShadow.m in Sources */,
 				F723FAD61D0432C800336E9C /* NetworkRequestManager.swift in Sources */,
 				F723FAE01D045F5800336E9C /* CurrencyExchangeCalculator.swift in Sources */,
@@ -575,6 +579,7 @@
 				F74A722C1D0D9CE100D9D8D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
