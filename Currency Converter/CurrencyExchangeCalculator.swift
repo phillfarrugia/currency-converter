@@ -32,4 +32,19 @@ class CurrencyExchangeCalculator {
         return baseAmount * exchangeRate
     }
     
+    /**
+     Formats an exchanged currency ouput into a locale friendly string with the
+     appropriate locale currency symbol.
+     - parameter rate: converted amount
+     - parameter currency: currency converted to
+     - returns: a string containing the amount and locale currency symbol
+     */
+    static func formattedCurrencyRate(rate: Double, currency: Currency) -> String {
+        let locale = NSLocale(localeIdentifier: currency.code)
+        if let localeCurrencySymbol = locale.displayNameForKey(NSLocaleCurrencySymbol, value: currency.code) {
+            return "\(localeCurrencySymbol) \(rate)"
+        }
+        return "\(rate)"
+    }
+    
 }

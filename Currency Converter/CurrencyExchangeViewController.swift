@@ -170,7 +170,7 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
             guard let currencies = currencies else { return }
             let selectedCurrency = currencies[selectedCurrencyIndex]
             let outputCurrencyAmount = exchangeCalculator.calculateCurrencyRate((textFieldText as NSString).doubleValue, outputCurrency: selectedCurrency)
-            outputCurrencyLabel.text = "\(outputCurrencyAmount)"
+            outputCurrencyLabel.text = "\(CurrencyExchangeCalculator.formattedCurrencyRate(outputCurrencyAmount, currency: selectedCurrency))"
         }
         else {
             outputCurrencyLabel.text = "0.00"
