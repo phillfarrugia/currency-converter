@@ -11,13 +11,14 @@ import UIKit
 class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak private var currencySelectorView: CurrencySelectorView!
+    @IBOutlet weak var underlineView: UIView!
     @IBOutlet weak var baseCurrencyLabel: UILabel!
     @IBOutlet weak var outputCurrencyLabel: UILabel!
     @IBOutlet weak private var baseAmountTextField: DynamicWidthTextField!
     
     static private let baseCurrencyName = "AUD"
     static private let conversionCurrencyNames = [ "CAD", "EUR", "GBP", "JPY", "USD" ]
-    static private let kMaximumDigits = 14
+    static private let kMaximumDigits = 10
     
     let exchangeCalculator = CurrencyExchangeCalculator(baseCurrency: Currency(name: baseCurrencyName))
     
@@ -65,17 +66,33 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
         currencySelectorView.initialSelectionIndex = selectedCurrencyIndex
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        underlineView.clipsToBounds = true
+        applyDottedUnderlineToView(underlineView, color: UIColor(red:0.30, green:0.27, blue:0.29, alpha:1.0))
+    }
+    
     private func requestLatestCurrencyData() {
         NetworkRequestManager.exchangeRatesRequest(CurrencyExchangeViewController.baseCurrencyName, conversionCurrencies: CurrencyExchangeViewController.conversionCurrencyNames) { (rates, error) in
             if let error = error {
-                // TODO: Present Real Error Message
-                print(error)
+                print(error) // TODO: Present Real Error Message
             }
             
             if let rates = rates {
                 self.currencies = rates // TODO: Save it to the disk and re-read it on startup
             }
         }
+    }
+    
+    func applyDottedUnderlineToView(view: UIView, color: UIColor) {
+        let borderLayer = CAShapeLayer()
+        borderLayer.strokeColor = color.CGColor
+        borderLayer.fillColor = nil
+        borderLayer.lineWidth = 3
+        borderLayer.lineDashPattern = [4, 2]
+        borderLayer.path = UIBezierPath(rect: CGRectMake(0, view.bounds.height, view.bounds.width, 6)).CGPath
+        view.layer.addSublayer(borderLayer)
     }
     
     // MARK: CurrencySelectorViewDelegate

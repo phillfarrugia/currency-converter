@@ -170,6 +170,7 @@
                         <outlet property="baseCurrencyLabel" destination="9JV-Ev-eVt" id="Muc-6P-c4B"/>
                         <outlet property="currencySelectorView" destination="v3o-Bz-FjY" id="ZB7-U2-DiU"/>
                         <outlet property="outputCurrencyLabel" destination="UR5-El-iAM" id="jZ2-S6-7IW"/>
+                        <outlet property="underlineView" destination="Tfj-Pv-7ba" id="2RT-Iy-xyu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
