@@ -135,7 +135,9 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="UR5-El-iAM" firstAttribute="centerY" secondItem="ucP-5F-A6p" secondAttribute="centerY" id="QYV-Aj-W7e"/>
+                                            <constraint firstItem="UR5-El-iAM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ucP-5F-A6p" secondAttribute="leading" constant="20" id="kKH-rR-fLG"/>
                                             <constraint firstItem="UR5-El-iAM" firstAttribute="centerX" secondItem="ucP-5F-A6p" secondAttribute="centerX" id="mE9-ne-UhV"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UR5-El-iAM" secondAttribute="trailing" constant="20" id="u5H-6W-ha5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
