@@ -30,17 +30,13 @@ class NetworkRequestManager {
         
         performNetworkRequest(request) { (dict, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue(), {
-                    completion(rates: nil, error: error)
-                })
+                completion(rates: nil, error: error)
             }
             
             // Map JSON Dictionary into Currency Models and pass to completion
             if let dict = dict, let rates = dict["rates"] as? [String: AnyObject] {
                 let currencies = Currency.currenciesWithDictionaries(rates)
-                dispatch_async(dispatch_get_main_queue(), { 
-                    completion(rates: currencies, error: nil)
-                })
+                completion(rates: currencies, error: nil)
             }
         }
     }
@@ -62,7 +58,9 @@ class NetworkRequestManager {
             
             // Request Failed
             guard error == nil else {
-                completion(JSON: nil, error: error)
+                dispatch_async(dispatch_get_main_queue(), {
+                    completion(JSON: nil, error: error)
+                })
                 return
             }
             
@@ -70,10 +68,14 @@ class NetworkRequestManager {
             if let data = data {
                 do {
                     let JSON = try NSJSONSerialization.dictionaryWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as? [String: AnyObject]
-                    completion(JSON: JSON, error: nil)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        completion(JSON: JSON, error: nil)
+                    })
                 }
                 catch let JSONError as NSError {
-                    completion(JSON: nil, error: JSONError)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        completion(JSON: nil, error: JSONError)
+                    })
                 }
             }
         }
