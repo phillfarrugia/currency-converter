@@ -42,7 +42,7 @@ class CurrencyExchangeCalculator {
     static func formattedCurrencyRate(rate: Double, currency: Currency) -> String {
         let locale = NSLocale(localeIdentifier: currency.code)
         if let localeCurrencySymbol = locale.displayNameForKey(NSLocaleCurrencySymbol, value: currency.code) {
-            return "\(localeCurrencySymbol) \(rate)"
+            return String(format: "\(localeCurrencySymbol) %.2f", rate)
         }
         return "\(rate)"
     }
