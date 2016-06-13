@@ -55,6 +55,7 @@ class CurrencyExchangeViewController: UIViewController, CurrencySelectorViewDele
     
     private func setupSubViews() {
         baseCurrencyLabel.text = CurrencyExchangeViewController.baseCurrencyCode
+        baseAmountTextField.defaultTextAttributes = DynamicWidthTextField.defaultTextFieldAttributes
         baseAmountTextField.text = "0.00"
         baseAmountTextField.delegate = self
         baseAmountTextField.addTarget(self, action: #selector(CurrencyExchangeViewController.textFieldTextDidChange(_:)), forControlEvents: .EditingChanged)

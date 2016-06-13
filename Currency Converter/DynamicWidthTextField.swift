@@ -12,7 +12,9 @@ import UIKit
 // enable a dynamic width while user is typing
 class DynamicWidthTextField: UITextField {
     
-    static private let defaultTextFieldAttributes: [String: AnyObject] = [
+    static private let kHorizontalMargin: CGFloat = 1.0
+    
+    static let defaultTextFieldAttributes: [String: AnyObject] = [
         NSForegroundColorAttributeName: UIColor.whiteColor(),
         NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 44)!
     ]
@@ -21,7 +23,7 @@ class DynamicWidthTextField: UITextField {
         if let text = self.text {
             if (text.characters.count > 0) {
                 let size = (text as NSString).sizeWithAttributes(DynamicWidthTextField.defaultTextFieldAttributes)
-                return CGSizeMake(size.width, self.frame.height)
+                return CGSizeMake(size.width + DynamicWidthTextField.kHorizontalMargin, self.frame.height)
             }
         }
         return super.intrinsicContentSize()
